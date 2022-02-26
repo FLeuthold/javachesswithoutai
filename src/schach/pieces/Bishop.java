@@ -21,15 +21,20 @@ public class Bishop extends Piece{
 			int maxY = Math.max(start.y, end.y);
 			int absY = Math.abs(diffY);
 			for(int i = 1; i < absY; i++) {
-				if(board[(minX + i) + (maxY - i)*8] != null)
-					return false;				
+				if(board[(minX + i) + (maxY - i)*8].getPiece() != null) {
+					return false;
+				}
+									
 			}
 			return true;
 		} else if (diffY == diffX) {
 			int minY = Math.min(start.y, end.y) ;
-			for(int i = 1; i < Math.abs(diffY); i++) {
-				if(board[(minX + i) + (minY + i)*8]  != null)
-					return false;		
+			int absY = Math.abs(diffY);
+			for(int i = 1; i < absY; i++) {
+				if(board[(minX + i) + (minY + i)*8].getPiece()  != null) {
+					return false;
+				}
+							
 			}
 			return true;
 		}	

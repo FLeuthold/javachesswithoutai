@@ -21,7 +21,7 @@ public class Rook extends Piece{
 				}
 				return true;
 			}else if (end.y == start.y) {
-				int minX = Math.min(start.y, end.y);
+				int minX = Math.min(start.x, end.x);
 				//Math.signum(minX);
 				int y = end.y;
 				for(int i = 1; i < minX; i++ ){
